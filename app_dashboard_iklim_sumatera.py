@@ -455,57 +455,57 @@ monthly = to_monthly(daily_filtered)
 if page == "🏠 Dashboard":
     st.markdown('<div class="section-title">👤 Profil Peneliti & Akademik</div>', unsafe_allow_html=True)
 
-   col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-with col1:
-    st.markdown("""
-    <div style="
-        background-color:#e7f1ff;
-        padding:18px;
-        border-radius:8px;
-        min-height:150px;
-    ">
-    <b>Identitas Peneliti</b>
-    <br><br>
-    • <b>Nama Peneliti:</b> Huriyatul Firdausi
-    <br>
-    • <b>NIM:</b> 06111382328074
-    </div>
-    """, unsafe_allow_html=True)
+    with col1:
+        st.markdown("""
+        <div style="
+            background-color:#e7f1ff;
+            padding:18px;
+            border-radius:8px;
+            min-height:150px;
+        ">
+        <b>Identitas Peneliti</b>
+        <br><br>
+        • <b>Nama Peneliti:</b> Huriyatul Firdausi
+        <br>
+        • <b>NIM:</b> 06111382328074
+        </div>
+        """, unsafe_allow_html=True)
 
-with col2:
-    st.markdown("""
-    <div style="
-        background-color:#fffde7;
-        padding:18px;
-        border-radius:8px;
-        min-height:150px;
-    ">
-    <b>Dosen Pembimbing</b>
-    <br><br>
-    • Dr. Melly Ariska, S.Pd., M.Sc.
-    </div>
-    """, unsafe_allow_html=True)
+    with col2:
+        st.markdown("""
+        <div style="
+            background-color:#fffde7;
+            padding:18px;
+            border-radius:8px;
+            min-height:150px;
+        ">
+        <b>Dosen Pembimbing</b>
+        <br><br>
+        • Dr. Melly Ariska, S.Pd., M.Sc.
+        </div>
+        """, unsafe_allow_html=True)
 
-with col3:
-    st.markdown("""
-    <div style="
-        background-color:#e8f8ed;
-        padding:18px;
-        border-radius:8px;
-        min-height:150px;
-    ">
-    <b>Informasi Akademik</b>
-    <br><br>
-    • <b>Program Studi:</b> Pendidikan Fisika
-    <br>
-    • <b>Fakultas:</b> Keguruan dan Ilmu Pendidikan
-    <br>
-    • <b>Universitas:</b> Universitas Sriwijaya
-    <br>
-    • <b>Tahun:</b> 2026
-    </div>
-    """, unsafe_allow_html=True)
+    with col3:
+        st.markdown("""
+        <div style="
+            background-color:#e8f8ed;
+            padding:18px;
+            border-radius:8px;
+            min-height:150px;
+        ">
+        <b>Informasi Akademik</b>
+        <br><br>
+        • <b>Program Studi:</b> Pendidikan Fisika
+        <br>
+        • <b>Fakultas:</b> Keguruan dan Ilmu Pendidikan
+        <br>
+        • <b>Universitas:</b> Universitas Sriwijaya
+        <br>
+        • <b>Tahun:</b> 2026
+        </div>
+        """, unsafe_allow_html=True)
 
     st.markdown('<div class="section-title">🛠️ Metadata Konfigurasi Model</div>', unsafe_allow_html=True)
     meta = pd.DataFrame({
