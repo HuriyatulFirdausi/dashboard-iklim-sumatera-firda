@@ -308,9 +308,27 @@ selected_station = st.sidebar.selectbox(
     list(STATIONS.keys())
 )
 
-st.sidebar.markdown("### Rentang Waktu")
-start_year = st.sidebar.selectbox("Mulai", list(range(1985, 2026)), index=0)
-end_year = st.sidebar.selectbox("Selesai", list(range(1985, 2026)), index=40)
+st.sidebar.markdown("### 📅 Rentang Waktu")
+
+start_date = st.sidebar.date_input(
+    "Mulai",
+    value=pd.Timestamp("1985-01-01").date(),
+    min_value=pd.Timestamp("1985-01-01").date(),
+    max_value=pd.Timestamp("2025-12-31").date(),
+    format="YYYY/MM/DD",
+)
+
+end_date = st.sidebar.date_input(
+    "Selesai",
+    value=pd.Timestamp("2025-12-31").date(),
+    min_value=pd.Timestamp("1985-01-01").date(),
+    max_value=pd.Timestamp("2025-12-31").date(),
+    format="YYYY/MM/DD",
+)
+
+if start_date > end_date:
+    st.sidebar.error("Tanggal mulai harus lebih awal dari tanggal selesai.")
+    st.stop()
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("📁 Data NASA POWER")
@@ -426,8 +444,8 @@ if daily is None:
 
 # Filter periode
 daily_filtered = daily[
-    (daily["DATE"].dt.year >= start_year) &
-    (daily["DATE"].dt.year <= end_year)
+    (daily["DATE"].dt.date >= start_date) &
+    (daily["DATE"].dt.date <= end_date)
 ].copy()
 monthly = to_monthly(daily_filtered)
 
